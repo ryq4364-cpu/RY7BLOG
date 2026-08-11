@@ -128,6 +128,97 @@ body {
     0 10px 28px rgba(49, 46, 129, 0.22);
 }
 
+/* 资料卡联系方式：GitHub + 一键复制邮箱 */
+#aside-content .card-info .card-info-social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+#aside-content .card-info .card-info-social-icons .social-icon,
+#aside-content .card-info .ry7-email-copy {
+  display: inline-grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin: 0;
+  place-items: center;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 0.75rem;
+  background: rgba(224, 242, 254, 0.66);
+  color: #2563eb !important;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+#aside-content .card-info .card-info-social-icons .social-icon:hover,
+#aside-content .card-info .ry7-email-copy:hover {
+  border-color: rgba(56, 189, 248, 0.58);
+  background: rgba(186, 230, 253, 0.86);
+  color: #4338ca !important;
+  transform: translateY(-2px);
+}
+
+#aside-content .card-info .card-info-social-icons .social-icon i {
+  color: #2563eb !important;
+}
+
+#aside-content .card-info .ry7-email-status {
+  min-height: 1.35rem;
+  margin-top: 0.45rem;
+  color: #0369a1;
+  font-family: var(--ry7-body);
+  font-size: 0.76rem;
+  line-height: 1.35rem;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+#aside-content .card-info .ry7-email-status.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#aside-content .card-info .ry7-email-status.is-error {
+  color: #b45309;
+}
+
+/* 左侧欢迎卡：用信号轨道而不是默认公告样式 */
+#aside-content .card-announcement {
+  position: relative;
+  overflow: hidden;
+}
+
+#aside-content .card-announcement::before {
+  position: absolute;
+  top: 1.1rem;
+  bottom: 1.1rem;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, var(--ry7-cyan), var(--ry7-violet));
+  content: '';
+}
+
+#aside-content .card-announcement .ry7-welcome-icon {
+  color: #0284c7 !important;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.35));
+}
+
+#aside-content .card-announcement .announcement_content {
+  color: #334155;
+  line-height: 1.85;
+}
+
 #article-container h2 {
   border-left: 3px solid var(--ry7-cyan);
   padding-left: 0.72rem;
@@ -173,6 +264,25 @@ button:focus-visible {
     font-size: 0.64rem;
     letter-spacing: 0.14em;
   }
+}
+
+[data-theme='dark'] #aside-content .card-info .card-info-social-icons .social-icon,
+[data-theme='dark'] #aside-content .card-info .ry7-email-copy {
+  border-color: rgba(96, 165, 250, 0.25);
+  background: rgba(30, 41, 59, 0.78);
+  color: #7dd3fc !important;
+}
+
+[data-theme='dark'] #aside-content .card-info .card-info-social-icons .social-icon i {
+  color: #7dd3fc !important;
+}
+
+[data-theme='dark'] #aside-content .card-announcement .announcement_content {
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] #aside-content .card-info .ry7-email-status {
+  color: #7dd3fc;
 }
 
 @media (prefers-reduced-motion: reduce) {

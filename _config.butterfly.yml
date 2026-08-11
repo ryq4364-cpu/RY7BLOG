@@ -284,7 +284,7 @@ aside:
   button: true
   mobile: true
   # Position: left / right
-  position: right
+  position: left
   display:
     archive: true
     tag: true
@@ -1066,7 +1066,7 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
-    # - <script src="xxxx"></script>
+    - <script src="/js/custom.js"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
