@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">RY7 信号节点</title>
+  <desc id="desc">蓝紫色圆形标志，中央是 RY7 字样，周围是通信信号轨道。</desc>
+  <defs>
+    <linearGradient id="bg" x1="24" y1="20" x2="232" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061a3a"/>
+      <stop offset=".5" stop-color="#253b86"/>
+      <stop offset="1" stop-color="#7027a8"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="50" y1="48" x2="208" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="103" fill="none" stroke="url(#signal)" stroke-width="3" stroke-dasharray="8 11" opacity=".85"/>
+  <path d="M43 137c24-35 50-52 78-52 31 0 61 21 92 63" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+  <path d="M52 164c24-24 49-36 76-36 26 0 51 11 76 34" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+  <circle cx="43" cy="137" r="6" fill="#67e8f9"/>
+  <circle cx="213" cy="148" r="6" fill="#a78bfa"/>
+  <circle cx="128" cy="128" r="76" fill="#07172f" fill-opacity=".68" stroke="#fff" stroke-opacity=".14"/>
+  <text x="128" y="143" fill="#f8fafc" font-family="Bahnschrift,Arial,sans-serif" font-size="52" font-weight="700" text-anchor="middle" letter-spacing="2">RY7</text>
+  <circle cx="128" cy="54" r="5" fill="#fff"/>
+</svg>

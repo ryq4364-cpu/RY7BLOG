@@ -1,3 +1,27 @@
+/* ==============================
+   RY7博客：蓝紫科技毛玻璃样式
+   ============================== */
+
+:root {
+  --ry7-ink: #071a3a;
+  --ry7-cyan: #38bdf8;
+  --ry7-violet: #8b5cf6;
+  --ry7-surface: rgba(255, 255, 255, 0.76);
+  --ry7-line: rgba(56, 189, 248, 0.24);
+  --ry7-display: Bahnschrift, "Microsoft YaHei UI", sans-serif;
+  --ry7-body: "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  --ry7-mono: "Cascadia Code", "JetBrains Mono", monospace;
+}
+
+body {
+  font-family: var(--ry7-body);
+}
+
+::selection {
+  color: #fff;
+  background: #4f46e5;
+}
+
 /* 首页背景缓慢移动 */
 #page-header.full_page {
   background-position: center;
@@ -15,7 +39,7 @@
   }
 }
 
-/* 文章卡片和侧边栏毛玻璃效果 */
+/* 文章卡片、侧边栏和文章页面毛玻璃 */
 #recent-posts > .recent-post-item,
 #aside-content .card-widget,
 #post,
@@ -23,44 +47,141 @@
 #archive,
 #tag,
 #category {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12);
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
 }
 
-/* 卡片悬停上浮 */
+/* 卡片悬停动画 */
 #recent-posts > .recent-post-item,
 #aside-content .card-widget {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 #recent-posts > .recent-post-item:hover,
 #aside-content .card-widget:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 35px rgba(79, 70, 229, 0.22);
+  box-shadow: 0 16px 38px rgba(59, 130, 246, 0.25);
 }
 
 /* 导航栏毛玻璃 */
 #page-header.nav-fixed #nav {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(4, 18, 52, 0.72) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 /* 首页标题增加蓝色光晕 */
 #site-title,
 #site-subtitle {
   text-shadow:
-    0 0 10px rgba(56, 189, 248, 0.8),
-    0 0 25px rgba(99, 102, 241, 0.65);
+    0 0 10px rgba(56, 189, 248, 0.85),
+    0 0 24px rgba(99, 102, 241, 0.7);
 }
 
-/* 圆角更加明显 */
-#recent-posts > .recent-post-item,
-#aside-content .card-widget,
-#post,
-#page {
-  border-radius: 18px;
+#site-title {
+  font-family: var(--ry7-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* 博客的签名元素：把首页定义为一座信号日志站 */
+#page-header.full_page #site-info::before {
+  display: table;
+  margin: 0 auto 0.8rem;
+  padding: 0.32rem 0.72rem;
+  border: 1px solid rgba(103, 232, 249, 0.52);
+  border-radius: 999px;
+  background: rgba(4, 18, 52, 0.46);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.18);
+  color: #cffafe;
+  content: "RY7 / SIGNAL LOG";
+  font-family: var(--ry7-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+}
+
+/* 让导航、标题和元信息具有一致的信号站语言 */
+#nav .menus_items .menus_item > a,
+#aside-content .item-headline,
+#post-info .post-meta,
+.post-meta-date,
+.article-sort-item-year {
+  font-family: var(--ry7-mono);
+}
+
+#aside-content .card-info .author-info-name {
+  font-family: var(--ry7-display);
+  letter-spacing: 0.04em;
+}
+
+#aside-content .card-info .avatar-img img {
+  border: 2px solid rgba(103, 232, 249, 0.72);
+  box-shadow:
+    0 0 0 6px rgba(56, 189, 248, 0.08),
+    0 10px 28px rgba(49, 46, 129, 0.22);
+}
+
+#article-container h2 {
+  border-left: 3px solid var(--ry7-cyan);
+  padding-left: 0.72rem;
+}
+
+#article-container a:not(.headerlink) {
+  text-decoration-color: rgba(56, 189, 248, 0.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+#footer {
+  border-top: 1px solid rgba(56, 189, 248, 0.22);
+  background: linear-gradient(135deg, #061a3a 0%, #172554 58%, #312e81 100%);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--ry7-cyan);
+  outline-offset: 3px;
+}
+
+/* 深色模式下的卡片 */
+[data-theme='dark'] #recent-posts > .recent-post-item,
+[data-theme='dark'] #aside-content .card-widget,
+[data-theme='dark'] #post,
+[data-theme='dark'] #page,
+[data-theme='dark'] #archive,
+[data-theme='dark'] #tag,
+[data-theme='dark'] #category {
+  background: rgba(15, 23, 42, 0.75) !important;
+  border-color: rgba(96, 165, 250, 0.2);
+}
+
+/* 手机端取消上浮，避免触摸时跳动 */
+@media screen and (max-width: 768px) {
+  #recent-posts > .recent-post-item:hover,
+  #aside-content .card-widget:hover {
+    transform: none;
+  }
+
+  #page-header.full_page #site-info::before {
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #page-header.full_page {
+    animation: none;
+  }
+
+  #recent-posts > .recent-post-item,
+  #aside-content .card-widget {
+    transition: none;
+  }
 }

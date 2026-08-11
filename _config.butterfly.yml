@@ -18,10 +18,14 @@ nav:
   fixed: false
 
 menu:
-  # Home: / || fas fa-home
-  # List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
+  首页: / || fas fa-satellite-dish
+  文章||fas fa-layer-group:
+    归档: /archives/ || fas fa-box-archive
+    分类: /categories/ || fas fa-folder-tree
+    标签: /tags/ || fas fa-tags
+  学习地图: /roadmap/ || fas fa-route
+  关于我: /about/ || fas fa-user-astronaut
+  GitHub: https://github.com/ryq4364-cpu || fab fa-github
 
 # --------------------------------------
 # Code Blocks Settings
@@ -46,17 +50,17 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
+  fab fa-github: https://github.com/ryq4364-cpu || GitHub || '#e2e8f0'
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
 # --------------------------------------
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /img/favicon.svg
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/avatar.svg
   effect: false
 
 # Disable all banner images
@@ -224,10 +228,10 @@ reward:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
-  enable: false
+  enable: true
   # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
   # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url:
+  url: https://github.com/ryq4364-cpu/RY7BLOG/edit/main/source/
 
 # Related Articles
 related_post:
@@ -245,15 +249,15 @@ post_pagination: 1
 
 # Displays outdated notice for a post
 noticeOutdate:
-  enable: false
+  enable: true
   # Style: simple / flat
   style: flat
   # When will it be shown
   limit_day: 365
   # Position: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 距离上次更新已经
+  message_next: 天，其中的工具、版本或结论可能已经变化。
 
 # --------------------------------------
 # Footer Settings
@@ -262,12 +266,12 @@ footer:
   nav:
   owner:
     enable: true
-    since: 2025
+    since: 2026
   # Copyright of theme and framework
   copyright:
     enable: true
     version: true
-  custom_text:
+  custom_text: 在代码与信号之间，记录每一次探索。
 
 # --------------------------------------
 # Aside Settings
@@ -287,15 +291,15 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: 通信工程学习者｜探索低空智能通信与深度强化学习
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
-      link: https://github.com/xxxxxx
+      text: 查看 GitHub
+      link: https://github.com/ryq4364-cpu
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 欢迎来到 RY7 的信号站。这里记录 Python、Linux、通信技术与深度强化学习的实践轨迹。
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -324,7 +328,7 @@ aside:
     color: false
     custom_colors:
     # Order of tags, random/name/length
-    orderby: random
+    orderby: name
     # Sort of order. 1, asc for ascending; -1, desc for descending
     order: 1
     sort_order:
@@ -355,7 +359,7 @@ aside:
     # Time difference between publish date and now
     # Formal: Month/Day/Year Time or Year/Month/Day Time
     # Leave it empty if you don't enable this feature
-    runtime_date:
+    runtime_date: 2026/08/10 14:54:50
 
 # --------------------------------------
 # Bottom right button
@@ -396,7 +400,7 @@ darkmode:
   end:
 
 # Show scroll percent in scroll-to-top button
-rightside_scroll_percent: false
+rightside_scroll_percent: true
 
 # Don't modify the following settings unless you know how they work
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
@@ -419,7 +423,7 @@ anchor:
   # When you scroll, the URL will update according to header id.
   auto_update: false
   # Click the headline to scroll and update the anchor
-  click_to_scroll: false
+  click_to_scroll: true
 
 photofigcaption: false
 
@@ -427,7 +431,7 @@ copy:
   enable: true
   # Add the copyright information after copied content
   copyright:
-    enable: false
+    enable: true
     limit_count: 150
 
 # Need to install the hexo-wordcount plugin
@@ -442,9 +446,9 @@ wordcount:
 
 # Busuanzi count for PV / UV in site
 busuanzi:
-  site_uv: true
-  site_pv: true
-  page_pv: true
+  site_uv: false
+  site_pv: false
+  page_pv: false
 
 # --------------------------------------
 # Math
