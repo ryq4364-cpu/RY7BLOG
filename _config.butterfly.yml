@@ -63,10 +63,10 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: 'linear-gradient(135deg, #071a3d 0%, #312e81 45%, #0ea5e9 100%)'
+default_top_img: /img/home-bg.png
 
 # The banner image of index page
-index_img: 'linear-gradient(135deg, #071a3d 0%, #312e81 45%, #0ea5e9 100%)'
+index_img: /img/home-bg.png
 
 # The banner image of archive page
 archive_img:
