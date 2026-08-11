@@ -1,0 +1,66 @@
+/* 首页背景缓慢移动 */
+#page-header.full_page {
+  background-position: center;
+  background-size: 110% 110%;
+  animation: backgroundMove 15s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* 文章卡片和侧边栏毛玻璃效果 */
+#recent-posts > .recent-post-item,
+#aside-content .card-widget,
+#post,
+#page,
+#archive,
+#tag,
+#category {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12);
+}
+
+/* 卡片悬停上浮 */
+#recent-posts > .recent-post-item,
+#aside-content .card-widget {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#recent-posts > .recent-post-item:hover,
+#aside-content .card-widget:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(79, 70, 229, 0.22);
+}
+
+/* 导航栏毛玻璃 */
+#page-header.nav-fixed #nav {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 首页标题增加蓝色光晕 */
+#site-title,
+#site-subtitle {
+  text-shadow:
+    0 0 10px rgba(56, 189, 248, 0.8),
+    0 0 25px rgba(99, 102, 241, 0.65);
+}
+
+/* 圆角更加明显 */
+#recent-posts > .recent-post-item,
+#aside-content .card-widget,
+#post,
+#page {
+  border-radius: 18px;
+}
