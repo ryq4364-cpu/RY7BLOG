@@ -23,6 +23,7 @@ menu:
     归档: /archives/ || fas fa-box-archive
     分类: /categories/ || fas fa-folder-tree
     标签: /tags/ || fas fa-tags
+  工程档案: /projects/ || fas fa-microchip
   学习地图: /roadmap/ || fas fa-route
   关于我: /about/ || fas fa-user-astronaut
   GitHub: https://github.com/ryq4364-cpu || fab fa-github
@@ -170,8 +171,8 @@ subtitle:
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
     - 记录学习，也记录成长
-    - Python · Linux · 通信技术 · 深度强化学习
-    - 在代码与信号之间，探索低空智能通信
+    - 硬件电路 · 嵌入式系统 · 通信技术
+    - 从信号链到智能通信，记录每一次工程实践
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -291,7 +292,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 通信工程学习者｜探索低空智能通信与深度强化学习
+    description: 通信工程本科生｜硬件电路 · 嵌入式系统 · 智能通信
     button:
       enable: true
       icon: fab fa-github
@@ -299,7 +300,7 @@ aside:
       link: https://github.com/ryq4364-cpu
   card_announcement:
     enable: true
-    content: 欢迎来到 RY7 的信号站。这里记录 Python、Linux、通信技术与深度强化学习的实践轨迹。
+    content: 欢迎来到 RY7 的信号站。这里记录硬件电路、嵌入式系统、通信技术与智能决策的工程实践。
   card_recent_post:
     enable: true
     # If set 0 will show all

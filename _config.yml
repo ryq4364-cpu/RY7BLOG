@@ -5,8 +5,8 @@
 # Site
 title: RY7的个人博客
 subtitle: 记录学习与成长
-description: 分享Python、Linux、通信技术和深度强化学习笔记
-keywords: Python, Linux, 通信技术, 深度强化学习
+description: 任永庆（RY7）的技术博客，记录通信工程、硬件电路、嵌入式系统、Python与智能通信实践
+keywords: 通信工程, 硬件电路, PCB, STM32, LoRa, 嵌入式系统, Python, Linux, 深度强化学习
 author: RY7
 language: zh-CN
 timezone: Asia/Shanghai

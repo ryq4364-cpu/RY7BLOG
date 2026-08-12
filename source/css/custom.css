@@ -224,6 +224,148 @@ body {
   padding-left: 0.72rem;
 }
 
+/* 关于页与工程档案：以“信号链模块”组织履历，而不是复刻简历表格 */
+.ry7-profile-intro {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 2rem;
+  padding: 1.65rem 1.75rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(139, 92, 246, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba(7, 26, 58, 0.96), rgba(30, 58, 138, 0.92));
+  box-shadow: 0 18px 40px rgba(30, 64, 175, 0.16);
+  color: #e0f2fe;
+}
+
+.ry7-profile-intro::after {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 4.6rem;
+  height: 4.6rem;
+  border: 1px dashed rgba(103, 232, 249, 0.36);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.65rem rgba(56, 189, 248, 0.04);
+  content: '';
+}
+
+.ry7-profile-intro .ry7-kicker,
+.ry7-project-code {
+  color: #67e8f9;
+  font-family: var(--ry7-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+.ry7-profile-intro h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0.55rem 0 0.7rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: #f8fafc;
+  font-family: var(--ry7-display);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.ry7-profile-intro p {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.85;
+}
+
+.ry7-skill-grid,
+.ry7-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 2rem;
+}
+
+.ry7-skill-card,
+.ry7-project-card {
+  position: relative;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--ry7-line);
+  border-radius: 14px;
+  background: rgba(239, 246, 255, 0.72);
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.08);
+}
+
+.ry7-skill-card::before,
+.ry7-project-card::before {
+  position: absolute;
+  top: -1px;
+  left: 1.2rem;
+  width: 2.8rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ry7-cyan), var(--ry7-violet));
+  content: '';
+}
+
+.ry7-skill-card strong,
+.ry7-project-card strong {
+  display: block;
+  margin-bottom: 0.42rem;
+  color: #0f2e5d;
+  font-family: var(--ry7-display);
+  font-size: 1rem;
+}
+
+.ry7-skill-card span {
+  color: #475569;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.ry7-project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ry7-project-card {
+  display: flex;
+  min-height: 12rem;
+  flex-direction: column;
+  color: inherit !important;
+  text-decoration: none !important;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ry7-project-card:hover {
+  border-color: rgba(56, 189, 248, 0.58);
+  box-shadow: 0 16px 32px rgba(30, 64, 175, 0.15);
+  transform: translateY(-4px);
+}
+
+.ry7-project-card .ry7-project-code {
+  margin-bottom: 1rem;
+  color: #0369a1;
+}
+
+.ry7-project-card p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.ry7-project-card em {
+  margin-top: auto;
+  padding-top: 1.1rem;
+  color: #64748b;
+  font-family: var(--ry7-mono);
+  font-size: 0.7rem;
+  font-style: normal;
+}
+
 #article-container a:not(.headerlink) {
   text-decoration-color: rgba(56, 189, 248, 0.55);
   text-decoration-thickness: 1px;
@@ -285,6 +427,41 @@ button:focus-visible {
   color: #7dd3fc;
 }
 
+[data-theme='dark'] .ry7-skill-card,
+[data-theme='dark'] .ry7-project-card {
+  border-color: rgba(96, 165, 250, 0.22);
+  background: rgba(15, 23, 42, 0.68);
+}
+
+[data-theme='dark'] .ry7-skill-card strong,
+[data-theme='dark'] .ry7-project-card strong {
+  color: #e0f2fe;
+}
+
+[data-theme='dark'] .ry7-skill-card span,
+[data-theme='dark'] .ry7-project-card p {
+  color: #cbd5e1;
+}
+
+@media screen and (max-width: 768px) {
+  .ry7-profile-intro {
+    padding: 1.3rem 1.15rem;
+  }
+
+  .ry7-profile-intro::after {
+    opacity: 0.45;
+  }
+
+  .ry7-skill-grid,
+  .ry7-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ry7-project-card {
+    min-height: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #page-header.full_page {
     animation: none;
@@ -292,6 +469,10 @@ button:focus-visible {
 
   #recent-posts > .recent-post-item,
   #aside-content .card-widget {
+    transition: none;
+  }
+
+  .ry7-project-card {
     transition: none;
   }
 }
