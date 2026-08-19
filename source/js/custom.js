@@ -207,12 +207,61 @@
     });
   }
 
+  function setupHomepageHeroScroll() {
+    const header = document.querySelector('#page-header.full_page');
+    const content = document.getElementById('content-inner');
+    if (!header || !content || header.dataset.ry7HeroScrollReady === 'true') return;
+
+    const siteInfo = header.querySelector('#site-info');
+    const scrollDown = header.querySelector('#scroll-down');
+
+    function scrollToContent() {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion && window.btf && typeof window.btf.scrollToDest === 'function') {
+        window.btf.scrollToDest(content.offsetTop, 300);
+        return;
+      }
+
+      window.scrollTo({
+        top: content.offsetTop,
+        behavior: reduceMotion ? 'auto' : 'smooth'
+      });
+    }
+
+    function handleKeyboardScroll(event) {
+      if (!['Enter', ' '].includes(event.key)) return;
+      if (event.target.closest('a, button, input, select, textarea')) return;
+      event.preventDefault();
+      scrollToContent();
+    }
+
+    header.addEventListener('click', function (event) {
+      if (event.defaultPrevented || event.button !== 0) return;
+      if (event.target.closest('#nav, #scroll-down, a, button, input, select, textarea, [contenteditable="true"]')) return;
+      scrollToContent();
+    });
+
+    if (siteInfo) siteInfo.title = '点击进入博客内容';
+
+    if (scrollDown) {
+      scrollDown.setAttribute('role', 'button');
+      scrollDown.setAttribute('tabindex', '0');
+      scrollDown.setAttribute('aria-label', '查看博客内容');
+      scrollDown.title = '点击进入博客内容';
+      scrollDown.addEventListener('keydown', handleKeyboardScroll);
+    }
+
+    header.classList.add('ry7-hero-scroll-ready');
+    header.dataset.ry7HeroScrollReady = 'true';
+  }
+
   function initRy7Enhancements() {
     setupEmailEventGuard();
     setupEmailCopy();
     setupWelcomeCard();
     setupAboutTabs();
     setupAboutHashNavigation();
+    setupHomepageHeroScroll();
   }
 
   if (document.readyState === 'loading') {

@@ -29,6 +29,53 @@ body {
   animation: backgroundMove 15s ease-in-out infinite alternate;
 }
 
+/* 首页整张首屏都是进入内容区的入口，顶部导航保持独立交互 */
+#page-header.full_page.ry7-hero-scroll-ready {
+  cursor: pointer;
+}
+
+#page-header.full_page.ry7-hero-scroll-ready #nav {
+  cursor: default;
+}
+
+#page-header.full_page.ry7-hero-scroll-ready #site-info,
+#page-header.full_page.ry7-hero-scroll-ready #scroll-down {
+  cursor: pointer;
+}
+
+#page-header.full_page.ry7-hero-scroll-ready #scroll-down {
+  bottom: 0.9rem;
+}
+
+#page-header.full_page.ry7-hero-scroll-ready #scroll-down::before {
+  display: block;
+  margin: 0 auto 0.18rem;
+  color: rgba(224, 242, 254, 0.82);
+  content: "点击任意区域 · 进入内容";
+  font-family: var(--ry7-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.72);
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+}
+
+#page-header.full_page.ry7-hero-scroll-ready:hover #scroll-down::before,
+#page-header.full_page.ry7-hero-scroll-ready #scroll-down:focus-visible::before {
+  color: #fff;
+  letter-spacing: 0.2em;
+}
+
+#page-header.full_page.ry7-hero-scroll-ready #scroll-down:focus-visible {
+  outline: none;
+}
+
+#page-header.full_page.ry7-hero-scroll-ready #scroll-down:focus-visible .scroll-down-effects {
+  color: #fff;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
+}
+
 @keyframes backgroundMove {
   0% {
     background-position: left top;
@@ -614,6 +661,11 @@ button:focus-visible {
     font-size: 0.64rem;
     letter-spacing: 0.14em;
   }
+
+  #page-header.full_page.ry7-hero-scroll-ready #scroll-down::before {
+    content: "点击进入内容";
+    font-size: 0.62rem;
+  }
 }
 
 [data-theme='dark'] #aside-content .card-info .card-info-social-icons .social-icon,
@@ -739,5 +791,9 @@ button:focus-visible {
 
   .ry7-about-panel {
     animation: none;
+  }
+
+  #page-header.full_page.ry7-hero-scroll-ready #scroll-down::before {
+    transition: none;
   }
 }
