@@ -279,6 +279,214 @@ body {
   line-height: 1.85;
 }
 
+/* 关于页双标签：个人叙事与公开简历共享同一信息架构 */
+.ry7-about-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: -0.75rem 0 1.8rem;
+  padding: 0.45rem;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 16px;
+  background: rgba(224, 242, 254, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.ry7-about-tab {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: #334155;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ry7-about-tab > i {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #2563eb;
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.1);
+}
+
+.ry7-about-tab > span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.14rem;
+}
+
+.ry7-about-tab strong {
+  font-family: var(--ry7-display);
+  font-size: 0.96rem;
+}
+
+.ry7-about-tab small {
+  overflow: hidden;
+  color: #64748b;
+  font-size: 0.72rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ry7-about-tab:hover {
+  border-color: rgba(56, 189, 248, 0.28);
+  background: rgba(255, 255, 255, 0.58);
+  transform: translateY(-1px);
+}
+
+.ry7-about-tab.is-active {
+  border-color: rgba(103, 232, 249, 0.36);
+  background: linear-gradient(135deg, #0f2e5d 0%, #253b86 62%, #4338ca 100%);
+  box-shadow: 0 10px 24px rgba(30, 64, 175, 0.2);
+  color: #f8fafc;
+}
+
+.ry7-about-tab.is-active > i {
+  background: rgba(7, 26, 58, 0.58);
+  color: #67e8f9;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.2);
+}
+
+.ry7-about-tab.is-active small {
+  color: #cbd5e1;
+}
+
+.ry7-about-panel[hidden] {
+  display: none !important;
+}
+
+.ry7-about-panel {
+  animation: ry7PanelIn 0.28s ease both;
+}
+
+@keyframes ry7PanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ry7-resume-note {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.85rem 0 1.6rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(14, 165, 233, 0.24);
+  border-radius: 12px;
+  background: rgba(224, 242, 254, 0.58);
+}
+
+.ry7-resume-note > i {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.14);
+  color: #0369a1;
+}
+
+.ry7-resume-note > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.ry7-resume-note strong {
+  color: #0f2e5d;
+  font-family: var(--ry7-display);
+}
+
+.ry7-resume-note span {
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.ry7-resume-timeline {
+  position: relative;
+  display: grid;
+  gap: 0;
+  margin: 1rem 0 2rem;
+  padding-left: 1.2rem;
+}
+
+.ry7-resume-timeline::before {
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  left: 0.23rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--ry7-cyan), var(--ry7-violet));
+  content: '';
+}
+
+.ry7-resume-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.65fr) minmax(0, 1.35fr);
+  gap: 1rem;
+  padding: 0.72rem 0 1rem 0.85rem;
+}
+
+.ry7-resume-entry::before {
+  position: absolute;
+  top: 1.05rem;
+  left: -1.28rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--ry7-cyan);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+  content: '';
+}
+
+.ry7-resume-entry time {
+  color: #0369a1;
+  font-family: var(--ry7-mono);
+  font-size: 0.78rem;
+}
+
+.ry7-resume-entry > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.ry7-resume-entry strong {
+  color: #0f2e5d;
+  font-family: var(--ry7-display);
+}
+
+.ry7-resume-entry span {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
 .ry7-skill-grid,
 .ry7-project-grid {
   display: grid;
@@ -443,6 +651,41 @@ button:focus-visible {
   color: #cbd5e1;
 }
 
+[data-theme='dark'] .ry7-about-tabs {
+  border-color: rgba(96, 165, 250, 0.2);
+  background: rgba(15, 23, 42, 0.58);
+  box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.08);
+}
+
+[data-theme='dark'] .ry7-about-tab {
+  color: #cbd5e1;
+}
+
+[data-theme='dark'] .ry7-about-tab > i {
+  background: rgba(30, 41, 59, 0.82);
+  color: #7dd3fc;
+}
+
+[data-theme='dark'] .ry7-about-tab small,
+[data-theme='dark'] .ry7-resume-note span,
+[data-theme='dark'] .ry7-resume-entry span {
+  color: #94a3b8;
+}
+
+[data-theme='dark'] .ry7-resume-note {
+  border-color: rgba(96, 165, 250, 0.2);
+  background: rgba(15, 23, 42, 0.58);
+}
+
+[data-theme='dark'] .ry7-resume-note strong,
+[data-theme='dark'] .ry7-resume-entry strong {
+  color: #e0f2fe;
+}
+
+[data-theme='dark'] .ry7-resume-entry::before {
+  border-color: #0f172a;
+}
+
 @media screen and (max-width: 768px) {
   .ry7-profile-intro {
     padding: 1.3rem 1.15rem;
@@ -460,6 +703,20 @@ button:focus-visible {
   .ry7-project-card {
     min-height: auto;
   }
+
+  .ry7-about-tabs {
+    grid-template-columns: 1fr;
+    margin-top: -0.45rem;
+  }
+
+  .ry7-about-tab {
+    padding: 0.78rem 0.85rem;
+  }
+
+  .ry7-resume-entry {
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -474,5 +731,13 @@ button:focus-visible {
 
   .ry7-project-card {
     transition: none;
+  }
+
+  .ry7-about-tab {
+    transition: none;
+  }
+
+  .ry7-about-panel {
+    animation: none;
   }
 }
